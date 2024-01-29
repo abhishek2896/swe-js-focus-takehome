@@ -20,3 +20,10 @@ export type Store = {
   shop: Shop;
   menu: MenuItem[];
 };
+
+export type Party = {
+  baby: number;
+  children: number;
+  senior: number;
+  adult: number;
+};

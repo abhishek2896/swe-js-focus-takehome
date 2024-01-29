@@ -16,7 +16,7 @@
     }
   ],
   "paths": {
-    "/shops/{shop}": {
+    "/shops/{id}": {
       "get": {
         "summary": "Get a single shop",
         "responses": {
@@ -42,6 +42,31 @@
       }
     },
     "/shops/{shop}/menu": {
+      "get": {
+        "summary": "Get a single shop's menu",
+        "responses": {
+          "200": {
+            "description": "All went well",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "id",
+                    "title",
+                    "description",
+                    "isGroupOrder",
+                    "minOrderQty",
+                    "maxOrderQty"
+                  ],
+                  "$ref": "#/components/schemas/MenuItem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/shops/{id}/menu": {
       "get": {
         "summary": "Get a single shop's menu",
         "responses": {
