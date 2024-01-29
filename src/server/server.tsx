@@ -57,7 +57,10 @@ class Server {
         `/shops/${req.params.shop}/menu`
       );
       const store = {
-        shop,
+        shop: {
+          ...shop,
+          slug: req.params.shop
+        },
         menu,
       };
       const markup = renderToString(<App store={store} />);

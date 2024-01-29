@@ -30,6 +30,9 @@ export class Matchers {
   }
 
   private matchPath(input: string) {
+    const paths = input.split("/")
+    paths[2] = this.req.originalUrl.split("/")[2]
+    input = paths.join("/")
     return Matchers.matchers.regexp(input, this.req.originalUrl);
   }
 
